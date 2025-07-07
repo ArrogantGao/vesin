@@ -42,6 +42,9 @@ target_include_directories(vesin PUBLIC
 
 target_compile_features(vesin PRIVATE cxx_std_17)
 
+# add support for PIC, to be used in shared lib
+set_target_properties(vesin PROPERTIES POSITION_INDEPENDENT_CODE ON)
+
 set_target_properties(vesin PROPERTIES
     # hide non-exported symbols by default
     CXX_VISIBILITY_PRESET hidden
